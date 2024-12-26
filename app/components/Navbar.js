@@ -29,7 +29,7 @@ function Navbar() {
     return (
       <>
         <nav className="px-[5vw] py-3 flex justify-between items-center">
-          <div>
+          <div className="md:hidden">
             <img
               onClick={toggleSidebar}
               className="w-5 md:hidden"
@@ -97,12 +97,13 @@ function Navbar() {
             transition: "width 1s",
           }}
         >
-          <div className="cursor-pointer absolute top-5 right-5">
+          <div className="cursor-pointer absolute top-5 right-5 md:hidden">
             <img
               width={30}
               onClick={sidebarClose}
               src="/cross-button.png"
               alt="Close Sidebar"
+              className="md:hidden"
             />
           </div>
           <ul className="flex flex-col gap-3 items-center pt-3 mt-12 md:hidden">
@@ -114,11 +115,11 @@ function Navbar() {
             ].map((item, index) => (
               <li
                 key={index}
-                className="group flex flex-col justify-center items-center  py-2 bg-yellow-100 w-full hover:bg-yellow-200"
+                className="group flex flex-col justify-center items-center  py-2 bg-yellow-100 w-full hover:bg-yellow-200 md:hidden"
               >
                 <Link href={item.route}>
                   <span
-                    className="menu text-lg cursor-pointer"
+                    className="menu text-lg cursor-pointer md:hidden"
                     style={{ fontSize: isExpanded ? "1rem" : "0rem" }}
                   >
                     {item.label}
@@ -134,7 +135,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="px-[5vw] py-3 flex justify-between items-center">
+      <nav className="px-[5vw] py-3 flex justify-between items-center bg-black" >
         <div className="box flex gap-2 items-center cursor-pointer">
           <img
             width={45}

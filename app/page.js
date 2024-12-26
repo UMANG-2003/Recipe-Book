@@ -7,7 +7,7 @@ import { useSession } from "next-auth/react";
 function Home() {
   const { data: session } = useSession();
   
-  // umngqusho
+  
   if (session) {
     return (
       <>
